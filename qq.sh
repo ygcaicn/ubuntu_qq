@@ -7,11 +7,13 @@ if ! [ -x ~/.local/bin/qq.sh ]; then
   echo 'Install this script to ~/.local/bin/qq.sh' >&2
   cp $0 ~/.local/bin/qq.sh
   QQ_P=/home/$(whoami)/.local/bin/qq.sh
+  wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/tim.png \
+  -O ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png
   cat <<-EOF > /home/$(whoami)/.local/share/applications/TIM.desktop
 [Desktop Entry]
 Categories=Network;InstantMessaging;
 Exec=${QQ_P}
-Icon=WINE_TIM
+Icon=/home/$(whoami)/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png
 Name=TIM
 NoDisplay=false
 StartupNotify=true
@@ -21,7 +23,7 @@ Name[en_US]=TIM
 EOF
 fi
 
-container_id=$(docker ps -al > _ && awk  'NR!=1 && $2 ~ /bestwu\/qq/ {print $1}' _)
+container_id=$(docker ps -al | awk  'NR!=1 && $2 ~ /bestwu\/qq/ {print $1}')
 if [ -z "$container_id" ]; then
   docker container run -d --name qq \
     --device /dev/snd \
@@ -40,7 +42,7 @@ if [ -z "$container_id" ]; then
     -e UID=`id -u` \
     bestwu/qq:office
 else
-  container_stat=$(docker ps > _ && awk  'NR!=1 && $2 ~ /bestwu\/qq/ {print $1}' _)
+  container_stat=$(docker ps | awk  'NR!=1 && $2 ~ /bestwu\/qq/ {print $1}')
   if [ -z "$container_stat" ]; then
     docker container start ${container_id}
   else
