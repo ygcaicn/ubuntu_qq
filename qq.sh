@@ -30,8 +30,6 @@ if [ -z "$container_id" ]; then
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
     -v $HOME:/home \
-    -v /opt/qq:/home/qq \
-    -v /mnt/Data:/mnt/Data \
     -e DISPLAY=unix$DISPLAY \
     -e XMODIFIERS=@im=fcitx \
     -e QT_IM_MODULE=fcitx \
