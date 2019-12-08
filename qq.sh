@@ -23,7 +23,7 @@ Name[en_US]=TIM
 EOF
 fi
 
-container_id=$(docker ps -al | awk  'NR!=1 && $2 ~ /bestwu\/qq/ {print $1}')
+container_id=$(docker ps -a | awk  'NR!=1 && $2 ~ /bestwu\/qq/ {print $1}')
 if [ -z "$container_id" ]; then
   docker container run -d --name qq \
     --device /dev/snd \
