@@ -4,7 +4,7 @@ if ! [ -x "$(command -v docker)" ]; then
   exit 1
 fi
 if ! [ -x ~/.local/bin/wechat.sh ]; then
-  echo 'Install this script to ~/.local/bin/qq.sh' >&2
+  echo 'Install this script to ~/.local/bin/wechat.sh' >&2
   cp $0 ~/.local/bin/wechat.sh
   WECHAT_P=/home/$(whoami)/.local/bin/wechat.sh
   wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/wechat.png \
