@@ -11,6 +11,7 @@
 git clone git@github.com:ygcaicn/ubuntu_qq.git
 cd ubuntu_qq
 ./qq.sh
+./wechat.sh
 ```
 
 ## 感谢
