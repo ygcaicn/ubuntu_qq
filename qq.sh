@@ -47,8 +47,8 @@ clean(){
 update(){
   clean
   wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.sh \
-  -O $0
-  . $0 -f
+  -O ~/.local/bin/qq.sh
+  . ~/.local/bin/qq.sh -f
   start
 }
 
