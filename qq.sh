@@ -39,7 +39,9 @@ remove(){
 }
 clean(){
   container_ids=$(docker ps -a | awk  'NR!=1 && $2 ~ /bestwu\/qq/ {print $1}')
-  docker container rm -f $container_ids
+  if [[ -n "$container_ids" ]]; then
+    docker container rm -f $container_ids
+  fi
 }
 
 update(){
@@ -75,7 +77,7 @@ startContainer(){
 
 start(){
   container_id=$(docker ps -a | grep script_qq | awk  '$2 ~ /bestwu\/qq/ {print $1}')
-  if [ -z "$container_id" ]; then
+  if [[ -z "$container_id" ]]; then
     startContainer
   else
     container_stat=$(docker ps | grep script_qq | awk  '$2 ~ /bestwu\/qq/ {print $1}')
