@@ -10,7 +10,7 @@ install(){
     #cp $0 ~/.local/bin/qq.sh
     wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.sh \
   -O ~/.local/bin/qq.sh
-    sed -i -r -e 's/^\s*install$/start/g' ~/.local/bin/qq.sh
+    sed -i -r -e 's/^\s*remove.*install$/start/g' ~/.local/bin/qq.sh
     chmod +x ~/.local/bin/qq.sh
     ln -i ~/.local/bin/qq.sh ~/.local/bin/qq
     QQ_P=/home/$(whoami)/.local/bin/qq.sh
@@ -35,15 +35,21 @@ EOF
 }
 
 remove(){
-  echo "remove ~/.local/bin/qq.sh"
-  [ -e ~/.local/bin/qq.sh ] && rm -f ~/.local/bin/qq.sh
+  [ -e ~/.local/bin/qq.sh ] && rm -f ~/.local/bin/qq.sh && echo "remove ~/.local/bin/qq.sh"
   [ -e ~/.local/bin/qq ] && rm -f ~/.local/bin/qq
-  echo "remove ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png"
-  [ -e ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png ] && rm -f ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png
-  echo "remove ~/.local/share/applications/TIM.desktop"
-  [ -e /home/$(whoami)/.local/share/applications/TIM.desktop ] && rm -f /home/$(whoami)/.local/share/applications/TIM.desktop
+  
+  [ -e ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png ] \
+  && rm -f ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png\
+  && echo "remove ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png"
+
+  
+  [ -e /home/$(whoami)/.local/share/applications/TIM.desktop ] \
+  && rm -f /home/$(whoami)/.local/share/applications/TIM.desktop \
+  && echo "remove ~/.local/share/applications/TIM.desktop"
+
   return 0
 }
+
 clean(){
   container_ids=$(docker ps -a | awk  'NR!=1 && $2 ~ /bestwu\/qq/ {print $1}')
   if [[ -n "$container_ids" ]]; then
@@ -176,6 +182,6 @@ main(){
   [[ "$UPDATE" == "1" ]] && update && return
   [[ "$HELP" == "1" ]] && help && return
   [[ "$START" == "1" ]] && start && return
-  install
+  remove && install
 }
 main

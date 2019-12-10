@@ -36,13 +36,21 @@ EOF
 }
 
 remove(){
-  echo "remove ~/.local/bin/wechat.sh"
-  [ -e ~/.local/bin/wechat.sh ] && rm -f ~/.local/bin/wechat.sh
+  
+  [ -e ~/.local/bin/wechat.sh ] && rm -f ~/.local/bin/wechat.sh\
+  && echo "remove ~/.local/bin/wechat.sh"
+
   [ -e ~/.local/bin/wechat ] && rm -f ~/.local/bin/wechat
-  echo "remove ~/.local/share/icons/hicolor/256x256/apps/WINE_WECHAT.png"
-  [ -e ~/.local/share/icons/hicolor/256x256/apps/WINE_WECHAT.png ] && rm -f ~/.local/share/icons/hicolor/256x256/apps/WINE_WECHAT.png
-  echo "remove ~/.local/share/applications/Wechat.desktop"
-  [ -e /home/$(whoami)/.local/share/applications/Wechat.desktop ] && rm -f /home/$(whoami)/.local/share/applications/Wechat.desktop
+  
+  [ -e ~/.local/share/icons/hicolor/256x256/apps/WINE_WECHAT.png ] \
+  && rm -f ~/.local/share/icons/hicolor/256x256/apps/WINE_WECHAT.png\
+  && echo "remove ~/.local/share/icons/hicolor/256x256/apps/WINE_WECHAT.png"
+
+  
+  [ -e /home/$(whoami)/.local/share/applications/Wechat.desktop ] \
+  && rm -f /home/$(whoami)/.local/share/applications/Wechat.desktop\
+  && echo "remove ~/.local/share/applications/Wechat.desktop"
+
   return 0
 }
 clean(){
@@ -169,6 +177,6 @@ main(){
   [[ "$UPDATE" == "1" ]] && update && return
   [[ "$HELP" == "1" ]] && help && return
   [[ "$START" == "1" ]] && start && return
-  install
+  remove && install
 }
 main
