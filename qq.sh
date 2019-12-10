@@ -7,7 +7,10 @@ install(){
   fi
   if ! [ -x ~/.local/bin/qq.sh ]; then
     echo 'Install this script to ~/.local/bin/qq.sh' >&2
-    cp $0 ~/.local/bin/qq.sh
+    #cp $0 ~/.local/bin/qq.sh
+    wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.sh \
+  -O ~/.local/bin/qq.sh
+    ln -i ~/.local/bin/qq.sh ~/.local/bin/qq
     QQ_P=/home/$(whoami)/.local/bin/qq.sh
     wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/tim.png \
     -O ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png
@@ -32,6 +35,7 @@ EOF
 remove(){
   echo "remove ~/.local/bin/qq.sh"
   [ -e ~/.local/bin/qq.sh ] && rm -f ~/.local/bin/qq.sh
+  [ -e ~/.local/bin/qq ] && rm -f ~/.local/bin/qq
   echo "remove ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png"
   [ -e ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png ] && rm -f ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png
   echo "remove ~/.local/share/applications/TIM.desktop"
@@ -46,10 +50,8 @@ clean(){
 
 update(){
   clean
-  wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.sh \
-  -O ~/.local/bin/qq.sh
-  . ~/.local/bin/qq.sh -f
-  start
+  remove
+  install
 }
 
 startContainer(){
