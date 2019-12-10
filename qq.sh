@@ -77,7 +77,7 @@ startContainer(){
     -e VIDEO_GID=`getent group video | cut -d: -f3` \
     -e GID=`id -g` \
     -e UID=`id -u` \
-    bestwu/qq:office
+    bestwu/qq:${tag}
   return 0
 }
 
@@ -102,11 +102,13 @@ starti(){
 }
 
 help(){
-  echo "./qq.sh [-h] [-i] [-f] [-c] [--start|start] [--remove] [--instance]"
+  echo "./qq.sh [-h] [-i] [-f] [-c] [--start|start] [-t|--tag Tag] [--remove] [--instance]"
   echo "  -h, --help            Show help"
   echo "  -i, --install         Install this script to system"
   echo "  -f, --force           Force install or reinstall"
   echo "  -c, --clean           Clean all qq container"
+  echo "  -t, --tag Tag         Explicit docker tag, office is default"
+  echo "                        im(QQ), office(TIM), eim(EIM), light(QQ Light)"
   echo "      --start           Start qq"
   echo "      --update          Update script"
   echo "      --remove          Remove this script"
@@ -123,6 +125,7 @@ INSTANCE=""
 CLEAN=""
 UPDATE=""
 START=""
+tag="office"
 while [[ $# > 0 ]];do
   key="$1"
   case $key in
@@ -137,6 +140,11 @@ while [[ $# > 0 ]];do
       ;;
       -f|--force)
       REINSTALL="1"
+      ;;
+      -t|--tag)
+      tag=$2
+      echo $tag
+      shift
       ;;
       --instance)
       INSTANCE="1"
