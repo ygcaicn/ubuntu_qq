@@ -1,5 +1,7 @@
 # ubuntu_qq
 
+Ubuntu qq&微信安装/启动脚本。
+
 ## 1. Docker
 
 本脚本依赖Docker，需要提前安装好Docker环境。参考<https://yeasy.gitbooks.io/docker_practice/install/ubuntu.html>安装
@@ -14,7 +16,7 @@ bash <(curl -L -s https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.
 bash <(curl -L -s https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/wechat.sh)
 ```
 
-## 2. 使用
+## 3. 使用
 
 ```sh
 qq -h
