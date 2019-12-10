@@ -51,3 +51,5 @@ wechat [-h] [-i] [-f] [-c] [--start|start] [--remove] [--instance]
 ## 感谢
 
 <https://github.com/bestwu/docker-qq>
+
+<https://github.com/bestwu/docker-wechat>
