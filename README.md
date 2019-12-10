@@ -20,7 +20,6 @@ bash <(curl -L -s https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/wec
 
 ```sh
 qq -h
-
 qq [-h] [-i] [-f] [-c] [--start|start] [-t|--tag Tag] [--remove] [--instance]
   -h, --help            Show help
   -i, --install         Install this script to system
