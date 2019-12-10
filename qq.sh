@@ -5,6 +5,11 @@ install(){
     echo 'Error: docker is not installed.' >&2
     exit 1
   fi
+  [ -n ~/.local/bin/ ] && mkdir -p ~/.local/bin/
+  p=$(grep ~/.local/bin: ~/.bashrc)
+  [ -n $p ] && echo "export PATH=\"$HOME/.local/bin:\$PATH\"" >> ~/.bashrc && source ~/.bashrc
+  [ -n ~/.local/share/icons/hicolor/256x256/apps ] && mkdir -p ~/.local/share/icons/hicolor/256x256/apps
+
   if ! [ -x ~/.local/bin/qq.sh ]; then
     echo 'Install this script to ~/.local/bin/qq.sh' >&2
     #cp $0 ~/.local/bin/qq.sh
