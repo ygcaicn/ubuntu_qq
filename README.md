@@ -4,13 +4,24 @@
 
 本脚本依赖Docker，需要提前安装好Docker环境。参考<https://yeasy.gitbooks.io/docker_practice/install/ubuntu.html>安装
 
+
+
+
 ## 2. 使用
 
 ```sh
-#clone or download
-git clone git@github.com:ygcaicn/ubuntu_qq.git
-cd ubuntu_qq
-./qq.sh -h
+#Install
+bash <(curl -L -s https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.sh)
+
+qq -h
+  -h, --help            Show help
+  -i, --install         Install this script to system
+  -f, --force           Force install or reinstall
+  -c, --clean           Clean all qq container
+      --start           Start qq
+      --update          Update script
+      --remove          Remove this script
+      --instance        Create a instance container, you can create more then one using this option
 
 ./wechat.sh
 ```

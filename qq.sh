@@ -28,7 +28,7 @@ Type=Application
 Name[en_US]=TIM
 EOF
   else
-    echo "already installed at ~/.local/bin/qq.sh"
+    echo "already installed at ~/.local/bin/qq.sh start"
   fi
 
 }
@@ -97,11 +97,12 @@ starti(){
 }
 
 help(){
-  echo "./qq.sh [-h] [-i] [-f] [-c] [--remove] [--instance]"
+  echo "./qq.sh [-h] [-i] [-f] [-c] [--start|start] [--remove] [--instance]"
   echo "  -h, --help            Show help"
   echo "  -i, --install         Install this script to system"
   echo "  -f, --force           Force install or reinstall"
   echo "  -c, --clean           Clean all qq container"
+  echo "      --start           Start qq"
   echo "      --update          Update script"
   echo "      --remove          Remove this script"
   echo "      --instance        Create a instance container, you can create more then one using this option"
@@ -116,11 +117,15 @@ HELP=""
 INSTANCE=""
 CLEAN=""
 UPDATE=""
+START=""
 while [[ $# > 0 ]];do
   key="$1"
   case $key in
       -i|--install)
       INSTALL="1"
+      ;;
+      --start|start)
+      START="1"
       ;;
       --remove)
       REMOVE="1"
@@ -156,7 +161,7 @@ main(){
   [[ "$CLEAN" == "1" ]] && clean && return
   [[ "$UPDATE" == "1" ]] && update && return
   [[ "$HELP" == "1" ]] && help && return
-  
-  start
+  [[ "$START" == "1" ]] && start && return
+  install
 }
 main
