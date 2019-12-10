@@ -4,15 +4,19 @@
 
 本脚本依赖Docker，需要提前安装好Docker环境。参考<https://yeasy.gitbooks.io/docker_practice/install/ubuntu.html>安装
 
-
-
-
-## 2. 使用
+## 2. 安装
 
 ```sh
 #Install qq
 bash <(curl -L -s https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.sh)
 
+#Install wechat
+bash <(curl -L -s https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/wechat.sh)
+```
+
+## 2. 使用
+
+```sh
 qq -h
   -h, --help            Show help
   -i, --install         Install this script to system
@@ -23,8 +27,6 @@ qq -h
       --remove          Remove this script
       --instance        Create a instance qq container, you can create more than one using this option
 
-#Install wechat
-bash <(curl -L -s https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/wechat.sh)
 wechat -h
   -h, --help            Show help
   -i, --install         Install this script to system
@@ -35,6 +37,7 @@ wechat -h
       --remove          Remove this script
       --instance        Create a instance wechat container, you can create more than one using this option
 ```
+
 自动创建启动图标，使用--instance选项可多开。
 
 ![show](./show.png)
