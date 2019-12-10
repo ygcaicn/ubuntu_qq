@@ -153,6 +153,7 @@ while [[ $# > 0 ]];do
       *)
       echo "Unknown opt."
       help
+      return
       ;;
   esac
   shift
