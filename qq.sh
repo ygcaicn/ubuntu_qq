@@ -110,7 +110,7 @@ help(){
   echo "      --start           Start qq"
   echo "      --update          Update script"
   echo "      --remove          Remove this script"
-  echo "      --instance        Create a instance container, you can create more then one using this option"
+  echo "      --instance        Create a instance qq container, you can create more then one using this option"
   return 0
 }
 

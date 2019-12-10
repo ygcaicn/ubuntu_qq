@@ -21,7 +21,7 @@ qq -h
       --start           Start qq
       --update          Update script
       --remove          Remove this script
-      --instance        Create a instance container, you can create more then one using this option
+      --instance        Create a instance qq container, you can create more than one using this option
 
 #Install wechat
 bash <(curl -L -s https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/wechat.sh)
@@ -33,7 +33,7 @@ wechat -h
       --start           Start wechat
       --update          Update script
       --remove          Remove this script
-      --instance        Create a instance container, you can create more then one using this option
+      --instance        Create a instance wechat container, you can create more than one using this option
 ```
 
 ## 感谢
