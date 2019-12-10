@@ -39,13 +39,15 @@ remove(){
 }
 clean(){
   container_ids=$(docker ps -a | awk  'NR!=1 && $2 ~ /bestwu\/qq/ {print $1}')
-  docker container rm -r $container_ids
+  docker container rm -f $container_ids
 }
 
 update(){
+  clean
   wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.sh \
   -O $0
   . $0 -f
+  start
 }
 
 startContainer(){
