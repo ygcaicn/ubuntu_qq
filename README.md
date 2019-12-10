@@ -35,6 +35,9 @@ wechat -h
       --remove          Remove this script
       --instance        Create a instance wechat container, you can create more than one using this option
 ```
+自动创建启动图标，使用--instance选项可多开。
+
+![show](./show.png)
 
 ## 感谢
 
