@@ -1,4 +1,4 @@
-# ubuntu_qq
+# ubuntu qq/微信
 
 Ubuntu qq&微信安装/启动脚本。
 
