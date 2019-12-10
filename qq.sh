@@ -10,6 +10,7 @@ install(){
     #cp $0 ~/.local/bin/qq.sh
     wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.sh \
   -O ~/.local/bin/qq.sh
+    sed -i -r -e 's/^\s*install$/XXX/g' ~/.local/bin/qq.sh
     chmod +x ~/.local/bin/qq.sh
     ln -i ~/.local/bin/qq.sh ~/.local/bin/qq
     QQ_P=/home/$(whoami)/.local/bin/qq.sh
@@ -28,9 +29,9 @@ Type=Application
 Name[en_US]=TIM
 EOF
   else
-    echo "already installed at ~/.local/bin/qq.sh start"
+    echo "already installed at ~/.local/bin/qq.sh"
   fi
-
+  return 0
 }
 
 remove(){
@@ -41,18 +42,20 @@ remove(){
   [ -e ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png ] && rm -f ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png
   echo "remove ~/.local/share/applications/TIM.desktop"
   [ -e /home/$(whoami)/.local/share/applications/TIM.desktop ] && rm -f /home/$(whoami)/.local/share/applications/TIM.desktop
+  return 0
 }
 clean(){
   container_ids=$(docker ps -a | awk  'NR!=1 && $2 ~ /bestwu\/qq/ {print $1}')
   if [[ -n "$container_ids" ]]; then
     docker container rm -f $container_ids
   fi
+  return 0
 }
 
 update(){
   clean
-  remove
-  install
+  remove && install
+  return 0
 }
 
 startContainer(){
@@ -75,7 +78,7 @@ startContainer(){
     -e GID=`id -g` \
     -e UID=`id -u` \
     bestwu/qq:office
-
+  return 0
 }
 
 start(){
@@ -90,10 +93,12 @@ start(){
       docker container exec -d ${container_id} /entrypoint.sh
     fi
   fi
+  return 0
 }
 
 starti(){
   startContainer instance
+  return 0
 }
 
 help(){
