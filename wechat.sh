@@ -10,7 +10,7 @@ install(){
     #cp $0 ~/.local/bin/wechat.sh
     wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/wechat.sh \
   -O ~/.local/bin/wechat.sh
-    sed -i -r -e 's/^\s*install$/start/g' ~/.local/bin/wechat.sh
+    sed -i -r -e 's/^\s*remove.*install$/start/g' ~/.local/bin/wechat.sh
     chmod +x ~/.local/bin/wechat.sh
     ln -i ~/.local/bin/wechat.sh ~/.local/bin/wechat
     WECHAT_P=/home/$(whoami)/.local/bin/wechat.sh
