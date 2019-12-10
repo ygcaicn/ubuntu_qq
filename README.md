@@ -40,7 +40,7 @@ wechat -h
       --instance        Create a instance wechat container, you can create more than one using this option
 ```
 
-自动创建启动图标，使用--instance选项可多开。
+自动创建启动图标，使用--instance选项可多开。可以复制粘贴发送文件。
 
 ![show](./show.png)
 
