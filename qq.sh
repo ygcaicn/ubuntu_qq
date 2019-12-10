@@ -102,7 +102,7 @@ starti(){
 }
 
 help(){
-  echo "./qq.sh [-h] [-i] [-f] [-c] [--start|start] [-t|--tag Tag] [--remove] [--instance]"
+  echo "qq [-h] [-i] [-f] [-c] [--start|start] [-t|--tag Tag] [--remove] [--instance]"
   echo "  -h, --help            Show help"
   echo "  -i, --install         Install this script to system"
   echo "  -f, --force           Force install or reinstall"

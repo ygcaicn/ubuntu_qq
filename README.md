@@ -20,16 +20,21 @@ bash <(curl -L -s https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/wec
 
 ```sh
 qq -h
+
+qq [-h] [-i] [-f] [-c] [--start|start] [-t|--tag Tag] [--remove] [--instance]
   -h, --help            Show help
   -i, --install         Install this script to system
   -f, --force           Force install or reinstall
   -c, --clean           Clean all qq container
+  -t, --tag Tag         Explicit docker tag, office is default
+                        im(QQ), office(TIM), eim(EIM), light(QQ Light)
       --start           Start qq
       --update          Update script
       --remove          Remove this script
-      --instance        Create a instance qq container, you can create more than one using this option
+      --instance        Create a instance qq container, you can create more then one using this option
 
 wechat -h
+wechat [-h] [-i] [-f] [-c] [--start|start] [--remove] [--instance]
   -h, --help            Show help
   -i, --install         Install this script to system
   -f, --force           Force install or reinstall

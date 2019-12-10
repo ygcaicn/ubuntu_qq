@@ -103,7 +103,7 @@ starti(){
 }
 
 help(){
-  echo "./wechat.sh [-h] [-i] [-f] [-c] [--start|start] [--remove] [--instance]"
+  echo "wechat [-h] [-i] [-f] [-c] [--start|start] [--remove] [--instance]"
   echo "  -h, --help            Show help"
   echo "  -i, --install         Install this script to system"
   echo "  -f, --force           Force install or reinstall"
