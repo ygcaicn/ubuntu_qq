@@ -10,6 +10,7 @@ install(){
     #cp $0 ~/.local/bin/qq.sh
     wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.sh \
   -O ~/.local/bin/qq.sh
+    chmod +x ~/.local/bin/qq.sh
     ln -i ~/.local/bin/qq.sh ~/.local/bin/qq
     QQ_P=/home/$(whoami)/.local/bin/qq.sh
     wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/tim.png \
