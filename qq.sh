@@ -112,6 +112,7 @@ REINSTALL=''
 HELP=""
 INSTANCE=""
 CLEAN=""
+UPDATE=""
 while [[ $# > 0 ]];do
   key="$1"
   case $key in
@@ -126,6 +127,9 @@ while [[ $# > 0 ]];do
       ;;
       --instance)
       INSTANCE="1"
+      ;;
+      --update)
+      UPDATE="1"
       ;;
       -c|--clean)
       CLEAN="1"
