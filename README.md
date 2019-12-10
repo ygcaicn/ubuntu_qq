@@ -10,7 +10,7 @@
 ## 2. 使用
 
 ```sh
-#Install
+#Install qq
 bash <(curl -L -s https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.sh)
 
 qq -h
@@ -23,7 +23,17 @@ qq -h
       --remove          Remove this script
       --instance        Create a instance container, you can create more then one using this option
 
-./wechat.sh
+#Install wechat
+bash <(curl -L -s https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/wechat.sh)
+wechat -h
+  -h, --help            Show help
+  -i, --install         Install this script to system
+  -f, --force           Force install or reinstall
+  -c, --clean           Clean all wechat container
+      --start           Start wechat
+      --update          Update script
+      --remove          Remove this script
+      --instance        Create a instance container, you can create more then one using this option
 ```
 
 ## 感谢
