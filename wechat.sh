@@ -182,7 +182,7 @@ while [[ $# > 0 ]];do
 done
 
 main(){
-  [[ "$REMOVE" == "1" ]] && remove && removei && return
+  [[ "$REMOVE" == "1" ]] && removei && remove && return
   [[ "$INSTALL" == "1" ]] && install && return
   [[ "$REINSTALL" == "1" ]] && remove && install && return
   [[ "$INSTANCE" == "1" ]] && starti && return
