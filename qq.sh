@@ -33,6 +33,7 @@ Terminal=0
 Type=Application
 Name[en_US]=TIM
 EOF
+  start
   else
     echo "already installed at ~/.local/bin/qq.sh"
   fi

@@ -34,6 +34,7 @@ Type=Application
 Name[en_US]=Wechat
 Name[zh_CN]=微信
 EOF
+  start
   else
     echo "already installed at ~/.local/bin/wechat.sh"
   fi
