@@ -41,6 +41,10 @@ EOF
 }
 
 remove(){
+  clean
+  docker container prune -f
+  docker rmi bestwu/qq
+
   [ -e ~/.local/bin/qq.sh ] && rm -f ~/.local/bin/qq.sh && echo "remove ~/.local/bin/qq.sh"
   [ -e ~/.local/bin/qq ] && rm -f ~/.local/bin/qq
   
