@@ -6,7 +6,7 @@ Ubuntu qq&微信安装/启动脚本。
 
 本脚本依赖Docker，需要提前安装好Docker环境。参考<https://yeasy.gitbooks.io/docker_practice/install/ubuntu.html>安装
 
-Ubuntu 19.10简化安装：
+Ubuntu 18.04(及以上)简化安装：
 
 ```sh
 sudo apt update
