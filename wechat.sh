@@ -60,6 +60,7 @@ remove(){
 }
 
 removei(){
+  clean
   imgs=$(docker images | awk '$1 ~ /bestwu\/wechat/ {print $3}')
   [[ -n $imgs ]] && docker rmi $imgs
   return 0
