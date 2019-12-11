@@ -42,10 +42,6 @@ EOF
 }
 
 remove(){
-  clean
-  docker container prune -f
-  docker rmi bestwu/wechat
-  
   [ -e ~/.local/bin/wechat.sh ] && rm -f ~/.local/bin/wechat.sh\
   && echo "remove ~/.local/bin/wechat.sh"
 
