@@ -55,6 +55,11 @@ remove(){
 
   return 0
 }
+removei(){
+  imgs=$(docker images | awk '$1 ~ /bestwu\/qq/ {print $3}')
+  [[ -n $imgs ]] && docker rmi $imgs
+  return 0
+}
 
 clean(){
   container_ids=$(docker ps -a | awk  'NR!=1 && $2 ~ /bestwu\/qq/ {print $1}')
@@ -180,7 +185,7 @@ while [[ $# > 0 ]];do
 done
 
 main(){
-  [[ "$REMOVE" == "1" ]] && remove && return
+  [[ "$REMOVE" == "1" ]] && remove && removei && return
   [[ "$INSTALL" == "1" ]] && install && return
   [[ "$REINSTALL" == "1" ]] && remove && install && return
   [[ "$INSTANCE" == "1" ]] && starti && return
