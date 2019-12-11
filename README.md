@@ -60,7 +60,7 @@ wechat [-h] [-i] [-f] [-c] [--start|start] [--remove] [--instance]
 
 配合插件[TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/)使用，体验更佳！
 
-![show](./show.png)
+![show](./show.jpg)
 
 ## 感谢
 
