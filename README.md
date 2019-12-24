@@ -42,7 +42,7 @@ qq [-h] [-i] [-f] [-c] [--start|start] [-t|--tag Tag] [--remove] [--instance]
       --start           Start qq
       --update          Update script
       --remove          Remove this script
-      --instance        Create a instance qq container, you can create more then one using this option
+      --instance        Create a instance qq container, you can create more than one using this option
 
 wechat -h
 wechat [-h] [-i] [-f] [-c] [--start|start] [--remove] [--instance]
