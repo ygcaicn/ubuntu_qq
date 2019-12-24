@@ -13,14 +13,14 @@ install(){
   if ! [ -x ~/.local/bin/qq.sh ]; then
     echo 'Install this script to ~/.local/bin/qq.sh' >&2
     #cp $0 ~/.local/bin/qq.sh
-    wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.sh \
-  -O ~/.local/bin/qq.sh
+    curl -L -H "Cache-Control: no-cache" https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.sh \
+    -o ~/.local/bin/qq.sh
     sed -i -r -e 's/^\s*remove.*install$/start/g' ~/.local/bin/qq.sh
     chmod +x ~/.local/bin/qq.sh
     ln -i ~/.local/bin/qq.sh ~/.local/bin/qq
     QQ_P=/home/$(whoami)/.local/bin/qq.sh
-    wget https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/tim.png \
-    -O ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png
+    curl -L -H "Cache-Control: no-cache" https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/tim.png \
+    -o ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png
     cat <<-EOF > /home/$(whoami)/.local/share/applications/TIM.desktop
 [Desktop Entry]
 Categories=Network;InstantMessaging;
