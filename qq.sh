@@ -43,12 +43,12 @@ EOF
 remove(){
   [ -e ~/.local/bin/qq.sh ] && rm -f ~/.local/bin/qq.sh && echo "remove ~/.local/bin/qq.sh"
   [ -e ~/.local/bin/qq ] && rm -f ~/.local/bin/qq
-  
+
   [ -e ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png ] \
   && rm -f ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png\
   && echo "remove ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png"
 
-  
+
   [ -e /home/$(whoami)/.local/share/applications/TIM.desktop ] \
   && rm -f /home/$(whoami)/.local/share/applications/TIM.desktop \
   && echo "remove ~/.local/share/applications/TIM.desktop"
@@ -179,7 +179,7 @@ while [[ $# > 0 ]];do
       *)
       echo "Unknown opt."
       help
-      return
+      exit 1
       ;;
   esac
   shift

@@ -46,12 +46,12 @@ remove(){
   && echo "remove ~/.local/bin/wechat.sh"
 
   [ -e ~/.local/bin/wechat ] && rm -f ~/.local/bin/wechat
-  
+
   [ -e ~/.local/share/icons/hicolor/256x256/apps/WINE_WECHAT.png ] \
   && rm -f ~/.local/share/icons/hicolor/256x256/apps/WINE_WECHAT.png\
   && echo "remove ~/.local/share/icons/hicolor/256x256/apps/WINE_WECHAT.png"
 
-  
+
   [ -e /home/$(whoami)/.local/share/applications/Wechat.desktop ] \
   && rm -f /home/$(whoami)/.local/share/applications/Wechat.desktop\
   && echo "remove ~/.local/share/applications/Wechat.desktop"
@@ -175,7 +175,7 @@ while [[ $# > 0 ]];do
       *)
       echo "Unknown opt."
       help
-      return
+      exit 1
       ;;
   esac
   shift
