@@ -37,8 +37,8 @@ qq [-h] [-i] [-f] [-c] [--start|start] [-t|--tag Tag] [--remove] [--instance]
   -i, --install         Install this script to system
   -f, --force           Force install or reinstall
   -c, --clean           Clean all qq container
-  -t, --tag Tag         Explicit docker tag, office is default
-                        im(QQ), office(TIM), eim(EIM), light(QQ Light)
+  -t, --tag Tag         Explicit docker tag, latest is default
+                        im(QQ), office(TIM), eim(EIM), light,latest(QQ Light)
       --start           Start qq
       --update          Update script
       --remove          Remove this script
