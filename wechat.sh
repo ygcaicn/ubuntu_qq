@@ -86,7 +86,7 @@ startContainer(){
     arg='--rm'
   fi
   docker container run -d ${arg} \
-    --device /dev/snd \
+    --device /dev/snd --ipc=host \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
     -v $HOME:$HOME \
