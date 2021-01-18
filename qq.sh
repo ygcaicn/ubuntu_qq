@@ -82,7 +82,7 @@ startContainer(){
     arg='--rm'
   fi
   docker container run -d ${arg} \
-    --device /dev/snd \
+    --device /dev/snd --ipc=host \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
     -v $HOME:$HOME \
@@ -125,8 +125,8 @@ help(){
   echo "  -i, --install         Install this script to system"
   echo "  -f, --force           Force install or reinstall"
   echo "  -c, --clean           Clean all qq container"
-  echo "  -t, --tag Tag         Explicit docker tag, office is default"
-  echo "                        im(QQ), office(TIM), eim(EIM), light(QQ Light)"
+  echo "  -t, --tag Tag         Explicit docker tag, latest is default"
+  echo "                        im(QQ), office(TIM), eim(EIM), light,latest(QQ Light)"
   echo "      --start           Start qq"
   echo "      --update          Update script"
   echo "      --remove          Remove this script"
@@ -143,7 +143,7 @@ INSTANCE=""
 CLEAN=""
 UPDATE=""
 START=""
-tag="office"
+tag="latest"
 while [[ $# > 0 ]];do
   key="$1"
   case $key in
