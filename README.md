@@ -1,3 +1,5 @@
+# 本项目停止维护，请使用最新的 [docker-deepin](https://github.com/ygcaicn/docker-deepin)!
+
 # ubuntu qq/微信
 
 Ubuntu qq&微信安装/启动脚本。
